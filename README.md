@@ -1,1 +1,80 @@
-# web
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>¿Cuánto pesas?</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f0f4f8, #d9e4f5);
+      text-align: center;
+      padding: 50px;
+      color: #333;
+    }
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+    .options {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 30px;
+    }
+    button {
+      padding: 15px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 8px;
+      background-color: #4a90e2;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #357ab8;
+    }
+    #result {
+      margin-top: 40px;
+    }
+    img {
+      max-width: 300px;
+      margin-top: 20px;
+      border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>¿Cuánto pesas?</h1>
+  <p>Hola soy sirius, quiero mostrarte lo que pienso de tu peso, por favor ingresa tu peso y te dire lo que pienso de ti.</p>
+
+  <div class="options">
+    <button onclick="mostrarMensaje('excelente')">Menos de 40 kg</button>
+    <button onclick="mostrarMensaje('excelente')">Menos de 60 kg</button>
+    <button onclick="mostrarMensaje('consulta')">Más de 90 kg</button>
+  </div>
+
+  <div id="result"></div>
+
+  <script>
+    function mostrarMensaje(tipo) {
+      const result = document.getElementById('result');
+      if (tipo === 'excelente') {
+        result.innerHTML = `
+          <h2>🎉 ¡Felicidades!</h2>
+          <p>Tu peso está dentro de un rango saludable. ¡Sigue cuidándote!</p>
+          <img src="https://via.placeholder.com/300x200?text=Peso+Saludable" alt="Peso saludable">
+        `;
+      } else if (tipo === 'consulta') {
+        result.innerHTML = `
+          <h2>📘 Consulta recomendada</h2>
+          <p>Gorda! alchile no la armas, Jose Torres El Rey del alto mando, TU PATRON GORDA!. Considera hablar con un profesional.</p>
+          <img src="https://via.placeholder.com/300x200?text=Consulta+Nutricional" alt="Consulta nutricional">
+        `;
+      } 
+    }
+  </script>
+
+</body>
+</html>
